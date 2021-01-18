@@ -1,0 +1,207 @@
+! Users should add all user specific namelist changes below in the form of 
+! namelist_var = new_namelist_value 
+ncdata = '/glade/work/tilmes/inputdata/init/le_geo/b.e15.B5505C5WCCML40CNR.f09_g16.cam5_4.1955.04.cam.i.1975-01-01_110L.nc'
+effgw_beres_dp          = 0.60D0
+frontgfc                = 3.0D-15
+taubgnd                 = 2.5D-3
+qbo_use_forcing         = .false.
+ 
+modc_tracers       = 20
+
+
+inithist = 'ENDOFRUN'
+history_carma = .false.
+history_chemistry = .false.   
+history_clubb = .false.   
+
+
+cldfrc_dp1              =  0.05D0
+micro_mg_dcs            =  223.D-6
+zmconv_c0_lnd           =  0.015
+cldfrc_rhminl           =  0.960D0
+
+cldfrc_rhminl_adj_land     =  0.000D0 
+micro_mg_version     =                                  2          
+
+drydep_list            = 'CH2O','CH3OOH','CO','H2O2','H2SO4','HNO3','HO2NO2','NO','NO2','O3','SO2','O3S'
+drydep_method          = 'xactive_lnd'
+
+megan_factors_file             = '/glade/p/cesmdata/cseg/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_c20130304.nc'
+megan_mapped_emisfctrs         = .false.
+megan_specifier                = 'CH2O = formaldehyde', 'CO = carbon_monoxide'
+
+!! afterwards
+
+nsplit   = 16
+nspltrac = 4 
+nspltvrm = 4 
+
+!! during 1st month of model integration
+
+!! nsplit   = 18
+!! nspltrac = 6
+!! nspltvrm = 6 
+
+
+strat_aero_feedback = .false.
+modal_accum_coarse_exch    = .true.
+modal_strat_sulfate     =  .true. 
+prescribed_strataero_file     = ''
+
+lght_no_prd_factor     = 0.8
+spe_data_file          = '/glade/p/cesmdata/cseg/inputdata/atm/waccm/solar/spes_1963-2100_CCMI_RefC2_c150729.nc'
+
+ ext_frc_specifier      = 'NO2 -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_aircraft_NO2_1850-2100_1.9x2.5_c151211.nc',
+         'SO2    -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1960-2008/IPCC_emissions_volc_SO2_1850-2100_1.9x2.5_c141106.nc',
+         'SO2    -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/stratvolc/VolcanEESMv2.02c_SO2_1850-2016_Pin0N-15N_1deg_c170621.nc',
+         'bc_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_bc_elev_1850-2100_c151211.nc',
+         'num_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_num_a1_elev_1850-2100_c151211.nc',
+         'num_a2  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_num_a2_elev_1850-2100_c151211.nc',
+         'pom_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_pom_elev_1850-2100_c151211.nc',
+         'so4_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_so4_a1_elev_1850-2100_c151211.nc',
+         'so4_a2  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_so4_a2_elev_1850-2100_c151211.nc'
+ ext_frc_type     = 'INTERP_MISSING_MONTHS'
+
+ srf_emis_specifier     = 'CH2O     -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_CH2O_surface_1850-2100_1.9x2.5_c140307.nc',
+         'CO       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_CO_surface_woBiog_1850-2100_1.9x2.5_c140307.nc',
+         'NO       -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_NO_surface_1850-2100_1.9x2.5_c140307.nc',
+         'DMS      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp6/IPCC_emissions_DMS_surface_1850-2100_1.9x2.5_c130814.nc',
+         'SO2      -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_SO2_surface_18502100_1.9X2.5_c151211.nc',
+         'SOAG     -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/IPCC_emissions_RCP85_SOAG_surface_18502100_1.9X2.5_c151211.nc',
+         'bc_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_bc_surf_1850-2100_c151211.nc',
+         'num_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_num_a1_surf_1850-2100_c151211.nc',
+         'num_a2  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_num_a2_surf_1850-2100_c151211.nc',
+         'pom_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_pom_surf_1850-2100_c151211.nc',
+         'so4_a1  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_so4_a1_surf_1850-2100_c151211.nc',
+         'so4_a2  -> /glade/p/cesmdata/cseg/inputdata/atm/cam/chem/emis/ccmi_1950_2100_rcp8.5/RCP85_mam3_so4_a2_surf_1850-2100_c151211.nc'         
+ srf_emis_type    = 'INTERP_MISSING_MONTHS'
+
+
+flbc_file = '/glade/work/xinyuew/LBC_rgnl_pulse_19810708.nc'
+flbc_list = 'CCL4', 'CF2CLBR', 'CF3BR', 'CFC11', 'CFC113', 'CFC12', 'CH3BR', 'CH3CCL3', 'CH3CL', 'CH4', 'CO2', 
+'H2', 'HCFC22', 'N2O', 'CFC114', 'CFC115', 'HCFC141B', 'HCFC142B', 'CH2BR2', 'CHBR3','H1202', 'H2402', 'OCS',
+'TP_T1', 'TP_T2', 'TP_T3', 'TP_T4', 'TP_T5', 'TP_T6', 'TP_T7', 'TP_T8', 'TP_T9', 'TP_T10',
+'NI_T1', 'NI_T2', 'NI_T3', 'NI_T4', 'NI_T5', 'NI_T6', 'NI_T7', 'NI_T8', 'NI_T9', 'NI_T10',
+'ASI_T1', 'ASI_T2', 'ASI_T3', 'ASI_T4', 'ASI_T5', 'ASI_T6', 'ASI_T7', 'ASI_T8', 'ASI_T9', 'ASI_T10',
+'EUR_T1', 'EUR_T2', 'EUR_T3', 'EUR_T4', 'EUR_T5', 'EUR_T6', 'EUR_T7', 'EUR_T8', 'EUR_T9', 'EUR_T10',
+'PAC_T1', 'PAC_T2', 'PAC_T3', 'PAC_T4', 'PAC_T5', 'PAC_T6', 'PAC_T7', 'PAC_T8', 'PAC_T9', 'PAC_T10',
+'US_T1', 'US_T2', 'US_T3', 'US_T4', 'US_T5', 'US_T6', 'US_T7', 'US_T8', 'US_T9', 'US_T10',
+'ATL_T1', 'ATL_T2', 'ATL_T3', 'ATL_T4', 'ATL_T5', 'ATL_T6', 'ATL_T7', 'ATL_T8', 'ATL_T9', 'ATL_T10',
+'TR_T1', 'TR_T2', 'TR_T3', 'TR_T4', 'TR_T5', 'TR_T6', 'TR_T7', 'TR_T8', 'TR_T9', 'TR_T10',
+'NP_T1', 'NP_T2', 'NP_T3', 'NP_T4', 'NP_T5', 'NP_T6', 'NP_T7', 'NP_T8', 'NP_T9', 'NP_T10',
+
+fincl1 = 'H2O','TP_T1', 'TP_T2', 'TP_T3', 'TP_T4', 'TP_T5', 'TP_T6', 'TP_T7', 'TP_T8', 'TP_T9', 'TP_T10', 'NI_T1', 'NI_T2', 'NI_T3', 'NI_T4', 'NI_T5', 'NI_T6', 'NI_T7', 'NI_T8', 'NI_T9', 'NI_T10', 'ASI_T1', 'ASI_T2', 'ASI_T3', 'ASI_T4', 'ASI_T5', 'ASI_T6', 'ASI_T7', 'ASI_T8', 'ASI_T9', 'ASI_T10','EUR_T1', 'EUR_T2', 'EUR_T3', 'EUR_T4', 'EUR_T5', 'EUR_T6', 'EUR_T7', 'EUR_T8', 'EUR_T9', 'EUR_T10','PAC_T1', 'PAC_T2', 'PAC_T3', 'PAC_T4', 'PAC_T5', 'PAC_T6', 'PAC_T7', 'PAC_T8', 'PAC_T9', 'PAC_T10','US_T1', 'US_T2', 'US_T3', 'US_T4', 'US_T5', 'US_T6', 'US_T7', 'US_T8', 'US_T9', 'US_T10','ATL_T1', 'ATL_T2', 'ATL_T3', 'ATL_T4', 'ATL_T5', 'ATL_T6', 'ATL_T7', 'ATL_T8', 'ATL_T9', 'ATL_T10','TR_T1', 'TR_T2', 'TR_T3', 'TR_T4', 'TR_T5', 'TR_T6', 'TR_T7', 'TR_T8', 'TR_T9', 'TR_T10','NP_T1', 'NP_T2', 'NP_T3', 'NP_T4', 'NP_T5', 'NP_T6', 'NP_T7', 'NP_T8', 'NP_T9', 'NP_T10',
+
+fincl2 = 'U','V','T','Q','OMEGA','PS','Z3','PRECC','PRECL','H2O', 
+         'TP_T1','TATP_T1','VDTP_T1','TCOND_TP_T1','TCONS_TP_T1', 
+         'TP_T2','TATP_T2','VDTP_T2','TCOND_TP_T2','TCONS_TP_T2', 
+         'TP_T3','TATP_T3','VDTP_T3','TCOND_TP_T3','TCONS_TP_T3', 
+         'TP_T4','TATP_T4','VDTP_T4','TCOND_TP_T4','TCONS_TP_T4', 
+         'TP_T5','TATP_T5','VDTP_T5','TCOND_TP_T5','TCONS_TP_T5', 
+         'TP_T6','TATP_T6','VDTP_T6','TCOND_TP_T6','TCONS_TP_T6', 
+         'TP_T7','TATP_T7','VDTP_T7','TCOND_TP_T7','TCONS_TP_T7', 
+         'TP_T8','TATP_T8','VDTP_T8','TCOND_TP_T8','TCONS_TP_T8', 
+         'TP_T9','TATP_T9','VDTP_T9','TCOND_TP_T9','TCONS_TP_T9', 
+         'TP_T10','TATP_T10','VDTP_T10','TCOND_TP_T10','TCONS_TP_T10', 
+         'NI_T1','TANI_T1','VDNI_T1','TCOND_NI_T1','TCONS_NI_T1', 
+         'NI_T2','TANI_T2','VDNI_T2','TCOND_NI_T2','TCONS_NI_T2', 
+         'NI_T3','TANI_T3','VDNI_T3','TCOND_NI_T3','TCONS_NI_T3', 
+         'NI_T4','TANI_T4','VDNI_T4','TCOND_NI_T4','TCONS_NI_T4', 
+         'NI_T5','TANI_T5','VDNI_T5','TCOND_NI_T5','TCONS_NI_T5', 
+         'NI_T6','TANI_T6','VDNI_T6','TCOND_NI_T6','TCONS_NI_T6', 
+         'NI_T7','TANI_T7','VDNI_T7','TCOND_NI_T7','TCONS_NI_T7', 
+         'NI_T8','TANI_T8','VDNI_T8','TCOND_NI_T8','TCONS_NI_T8', 
+         'NI_T9','TANI_T9','VDNI_T9','TCOND_NI_T9','TCONS_NI_T9', 
+         'NI_T10','TANI_T10','VDNI_T10','TCOND_NI_T10','TCONS_NI_T10', 
+         'ASI_T1','TAASI_T1','VDASI_T1','TCOND_ASI_T1','TCONS_ASI_T1', 
+         'ASI_T2','TAASI_T2','VDASI_T2','TCOND_ASI_T2','TCONS_ASI_T2', 
+         'ASI_T3','TAASI_T3','VDASI_T3','TCOND_ASI_T3','TCONS_ASI_T3', 
+         'ASI_T4','TAASI_T4','VDASI_T4','TCOND_ASI_T4','TCONS_ASI_T4', 
+         'ASI_T5','TAASI_T5','VDASI_T5','TCOND_ASI_T5','TCONS_ASI_T5', 
+         'ASI_T6','TAASI_T6','VDASI_T6','TCOND_ASI_T6','TCONS_ASI_T6', 
+         'ASI_T7','TAASI_T7','VDASI_T7','TCOND_ASI_T7','TCONS_ASI_T7', 
+         'ASI_T8','TAASI_T8','VDASI_T8','TCOND_ASI_T8','TCONS_ASI_T8', 
+         'ASI_T9','TAASI_T9','VDASI_T9','TCOND_ASI_T9','TCONS_ASI_T9', 
+         'ASI_T10','TAASI_T10','VDASI_T10','TCOND_ASI_T10','TCONS_ASI_T10', 
+         'EUR_T1','TAEUR_T1','VDEUR_T1','TCOND_EUR_T1','TCONS_EUR_T1', 
+         'EUR_T2','TAEUR_T2','VDEUR_T2','TCOND_EUR_T2','TCONS_EUR_T2', 
+         'EUR_T3','TAEUR_T3','VDEUR_T3','TCOND_EUR_T3','TCONS_EUR_T3', 
+         'EUR_T4','TAEUR_T4','VDEUR_T4','TCOND_EUR_T4','TCONS_EUR_T4', 
+         'EUR_T5','TAEUR_T5','VDEUR_T5','TCOND_EUR_T5','TCONS_EUR_T5', 
+         'EUR_T6','TAEUR_T6','VDEUR_T6','TCOND_EUR_T6','TCONS_EUR_T6', 
+         'EUR_T7','TAEUR_T7','VDEUR_T7','TCOND_EUR_T7','TCONS_EUR_T7', 
+         'EUR_T8','TAEUR_T8','VDEUR_T8','TCOND_EUR_T8','TCONS_EUR_T8', 
+         'EUR_T9','TAEUR_T9','VDEUR_T9','TCOND_EUR_T9','TCONS_EUR_T9', 
+         'EUR_T10','TAEUR_T10','VDEUR_T10','TCOND_EUR_T10','TCONS_EUR_T10', 
+         'PAC_T1','TAPAC_T1','VDPAC_T1','TCOND_PAC_T1','TCONS_PAC_T1', 
+         'PAC_T2','TAPAC_T2','VDPAC_T2','TCOND_PAC_T2','TCONS_PAC_T2', 
+         'PAC_T3','TAPAC_T3','VDPAC_T3','TCOND_PAC_T3','TCONS_PAC_T3', 
+         'PAC_T4','TAPAC_T4','VDPAC_T4','TCOND_PAC_T4','TCONS_PAC_T4', 
+         'PAC_T5','TAPAC_T5','VDPAC_T5','TCOND_PAC_T5','TCONS_PAC_T5', 
+         'PAC_T6','TAPAC_T6','VDPAC_T6','TCOND_PAC_T6','TCONS_PAC_T6', 
+         'PAC_T7','TAPAC_T7','VDPAC_T7','TCOND_PAC_T7','TCONS_PAC_T7', 
+         'PAC_T8','TAPAC_T8','VDPAC_T8','TCOND_PAC_T8','TCONS_PAC_T8', 
+         'PAC_T9','TAPAC_T9','VDPAC_T9','TCOND_PAC_T9','TCONS_PAC_T9', 
+         'PAC_T10','TAPAC_T10','VDPAC_T10','TCOND_PAC_T10','TCONS_PAC_T10', 
+         'US_T1','TAUS_T1','VDUS_T1','TCOND_US_T1','TCONS_US_T1', 
+         'US_T2','TAUS_T2','VDUS_T2','TCOND_US_T2','TCONS_US_T2', 
+         'US_T3','TAUS_T3','VDUS_T3','TCOND_US_T3','TCONS_US_T3', 
+         'US_T4','TAUS_T4','VDUS_T4','TCOND_US_T4','TCONS_US_T4', 
+         'US_T5','TAUS_T5','VDUS_T5','TCOND_US_T5','TCONS_US_T5', 
+         'US_T6','TAUS_T6','VDUS_T6','TCOND_US_T6','TCONS_US_T6', 
+         'US_T7','TAUS_T7','VDUS_T7','TCOND_US_T7','TCONS_US_T7', 
+         'US_T8','TAUS_T8','VDUS_T8','TCOND_US_T8','TCONS_US_T8', 
+         'US_T9','TAUS_T9','VDUS_T9','TCOND_US_T9','TCONS_US_T9', 
+         'US_T10','TAUS_T10','VDUS_T10','TCOND_US_T10','TCONS_US_T10', 
+         'ATL_T1','TAATL_T1','VDATL_T1','TCOND_ATL_T1','TCONS_ATL_T1', 
+         'ATL_T2','TAATL_T2','VDATL_T2','TCOND_ATL_T2','TCONS_ATL_T2', 
+         'ATL_T3','TAATL_T3','VDATL_T3','TCOND_ATL_T3','TCONS_ATL_T3', 
+         'ATL_T4','TAATL_T4','VDATL_T4','TCOND_ATL_T4','TCONS_ATL_T4', 
+         'ATL_T5','TAATL_T5','VDATL_T5','TCOND_ATL_T5','TCONS_ATL_T5', 
+         'ATL_T6','TAATL_T6','VDATL_T6','TCOND_ATL_T6','TCONS_ATL_T6', 
+         'ATL_T7','TAATL_T7','VDATL_T7','TCOND_ATL_T7','TCONS_ATL_T7', 
+         'ATL_T8','TAATL_T8','VDATL_T8','TCOND_ATL_T8','TCONS_ATL_T8', 
+         'ATL_T9','TAATL_T9','VDATL_T9','TCOND_ATL_T9','TCONS_ATL_T9', 
+         'ATL_T10','TAATL_T10','VDATL_T10','TCOND_ATL_T10','TCONS_ATL_T10', 
+         'TR_T1','TATR_T1','VDTR_T1','TCOND_TR_T1','TCONS_TR_T1', 
+         'TR_T2','TATR_T2','VDTR_T2','TCOND_TR_T2','TCONS_TR_T2', 
+         'TR_T3','TATR_T3','VDTR_T3','TCOND_TR_T3','TCONS_TR_T3', 
+         'TR_T4','TATR_T4','VDTR_T4','TCOND_TR_T4','TCONS_TR_T4', 
+         'TR_T5','TATR_T5','VDTR_T5','TCOND_TR_T5','TCONS_TR_T5', 
+         'TR_T6','TATR_T6','VDTR_T6','TCOND_TR_T6','TCONS_TR_T6', 
+         'TR_T7','TATR_T7','VDTR_T7','TCOND_TR_T7','TCONS_TR_T7', 
+         'TR_T8','TATR_T8','VDTR_T8','TCOND_TR_T8','TCONS_TR_T8', 
+         'TR_T9','TATR_T9','VDTR_T9','TCOND_TR_T9','TCONS_TR_T9', 
+         'TR_T10','TATR_T10','VDTR_T10','TCOND_TR_T10','TCONS_TR_T10', 
+         'NP_T1','TANP_T1','VDNP_T1','TCOND_NP_T1','TCONS_NP_T1', 
+         'NP_T2','TANP_T2','VDNP_T2','TCOND_NP_T2','TCONS_NP_T2', 
+         'NP_T3','TANP_T3','VDNP_T3','TCOND_NP_T3','TCONS_NP_T3', 
+         'NP_T4','TANP_T4','VDNP_T4','TCOND_NP_T4','TCONS_NP_T4', 
+         'NP_T5','TANP_T5','VDNP_T5','TCOND_NP_T5','TCONS_NP_T5', 
+         'NP_T6','TANP_T6','VDNP_T6','TCOND_NP_T6','TCONS_NP_T6', 
+         'NP_T7','TANP_T7','VDNP_T7','TCOND_NP_T7','TCONS_NP_T7', 
+         'NP_T8','TANP_T8','VDNP_T8','TCOND_NP_T8','TCONS_NP_T8', 
+         'NP_T9','TANP_T9','VDNP_T9','TCOND_NP_T9','TCONS_NP_T9', 
+         'NP_T10','TANP_T10','VDNP_T10','TCOND_NP_T10','TCONS_NP_T10'
+
+fincl3      = ''
+         
+fincl4      = ''
+fincl6      = ''
+fincl7      = ''
+
+! mfilt          =             1,   10,   20,  73, 365
+! nhtfrq         =            0, -240, -240, -24, -24
+
+mfilt           =            1,   30,   20,  73, 30
+nhtfrq          =            0,  -24,  -24, -24, -24
+
+
+rad_diag_1     = 'A:Q:H2O', 'A:O2:O2', 'A:CO2:CO2', 'A:O3:O3', 'A:N2O:N2O', 'A:CH4:CH4', 'N:CFC11STAR:CFC11', 'A:CFC12:CFC12'
+
+rxn_rate_sums     = 'OddOx_HOx_Loss = HO2_O + HO2_O3 + OH_O + OH_O3 + H_O3', 'OddOx_Ox_Loss  = 2.0*O_O3 + O1D_H2O',
+         'OddOx_NOx_Loss = 2.0*NO2_O + 2.0*jno3_b', 'OddOx_CLOxBROx_Loss = 2.0*CLO_O + 2.0*jcl2o2 + 2.0*CLO_CLOa + 2.0*CLO_CLOb + 2.0*BRO_CLOb + 2.0*BRO_CLOc + 2.0*BRO_BRO + 2.0*BRO_O + CLO_HO2 + BRO_HO2',
+         'OddOx_Loss_Tot = 2.0*O_O3 + O1D_H2O + HO2_O + HO2_O3 + OH_O + OH_O3 + H_O3 + 2.0*NO2_O + 2.0*jno3_b + 2.0*CLO_O + 2.0*jcl2o2 + 2.0*CLO_CLOa + 2.0*CLO_CLOb + 2.0*BRO_CLOb + 2.0*BRO_CLOc + 2.0*BRO_BRO + 2.0*BRO_O + CLO_HO2 + BRO_HO2', 'OddOx_Prod_Tot = 2.0*jo2_a + 2.0*jo2_b',
+         'O3_Prod = NO_HO2 + CH3O2_NO', 'O3_Loss = O1D_H2O + OH_O3 + HO2_O3',
+         'RO2_NO_sum  = NO_HO2 + CH3O2_NO', 'RO2_HO2_sum = CH3O2_HO2'
+
